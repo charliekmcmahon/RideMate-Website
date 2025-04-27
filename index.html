@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ darkMode: localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) }" x-init="document.documentElement.classList.toggle('dark', darkMode)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideMate - Motorcycle Ride Tracker</title>
+    <meta name="description" content="Like Strava, but for your motorbike. RideMate is a privacy-focused ride tracker for motorcycle enthusiasts.">
+    <link rel="icon" href="/icon-light.png" sizes="any">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <header class="absolute inset-x-0 top-0 z-50 bg-white dark:bg-gray-900" x-data="{ mobileMenuOpen: false }">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex flex-1">
+          <div class="hidden lg:flex lg:gap-x-12">
+            <!-- Links removed as requested -->
+          </div>
+          <div class="flex lg:hidden">
+            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-400" @click="mobileMenuOpen = true">
+              <span class="sr-only">Open main menu</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <a href="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">RideMate</span>
+          <img class="h-10 w-auto dark:hidden" src="icon-light.png" alt="RideMate Logo Light">
+          <img class="h-10 w-auto hidden dark:block" src="icon-dark.png" alt="RideMate Logo Dark">
+        </a>
+        <div class="flex flex-1 justify-end items-center">
+          <a href="https://testflight.apple.com/join/hhDZSPuX" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Get the Beta <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="lg:hidden" role="dialog" aria-modal="true" x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div class="fixed inset-y-0 left-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-x-full" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-full">
+          <div class="flex items-center justify-between">
+            <div class="flex flex-1">
+              <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-400" @click="mobileMenuOpen = false">
+                <span class="sr-only">Close menu</span>
+                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <a href="/" class="-m-1.5 p-1.5">
+              <span class="sr-only">RideMate</span>
+              <img class="h-10 w-auto dark:hidden" src="icon-light.png" alt="RideMate Logo Light">
+              <img class="h-10 w-auto hidden dark:block" src="icon-dark.png" alt="RideMate Logo Dark">
+            </a>
+            <div class="flex flex-1 justify-end items-center">
+              <a href="https://testflight.apple.com/join/hhDZSPuX" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Get the Beta <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+    <div class="relative isolate pt-2">
+      <svg class="absolute inset-0 -z-10 size-full stroke-gray-200 dark:stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
+        <defs>
+          <pattern id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+            <path d="M100 200V.5M.5 .5H200" fill="none" />
+          </pattern>
+        </defs>
+        <svg x="50%" y="-1" class="overflow-visible fill-gray-50 dark:fill-gray-900/10">
+          <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+        </svg>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" />
+      </svg>
+      <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
+        <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+          <div class="flex items-center gap-x-2">
+            <span class="text-5xl font-semibold tracking-tighter text-gray-900 dark:text-gray-400 sm:text-7xl">RideMate</span>
+            <img class="h-24 mb-0 w-auto dark:hidden" src="icon-light.png" alt="RideMate Logo Light">
+            <img class="h-24 mb-0 w-auto hidden dark:block" src="icon-dark.png" alt="RideMate Logo Dark">
+          </div>
+          <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-7xl">Like Strava, but for your motorbike.</h1>
+          <p class="mt-8 text-pretty text-lg font-medium text-gray-500 dark:text-gray-400 sm:text-xl/8">Finally, a dedicated ride tracker built for motorcycle enthusiasts who value their privacy. RideMate lets you log your every adventure – the scenic routes, the winding roads, the pure joy of riding – all securely on your phone.</p>
+          <div class="mt-10 flex items-center gap-x-6">
+            <a href="https://testflight.apple.com/join/hhDZSPuX" class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Sign up for the beta</a>
+            <a href="#features" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Learn more <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow">
+          <img class="mx-auto w-[32.32rem] max-w-full drop-shadow-xl dark:opacity-80" src="ride.png" alt="RideMate app screenshot on a phone showing a map" />
+        </div>
+      </div>
+    </div>
+
+    <div id="features" class="overflow-hidden py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div class="lg:pr-8 lg:pt-4">
+            <div class="lg:max-w-lg">
+              <h2 class="text-base/7 font-semibold text-blue-600 dark:text-blue-400">Features</h2>
+              <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Ride tracking, made simple</p>
+              <p class="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">Track and relive your rides with features designed for motorcyclists who value privacy and simplicity.</p>
+              <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 dark:text-gray-400 lg:max-w-none">
+                <div class="relative pl-9">
+                  <dt class="inline font-semibold text-gray-900 dark:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute left-1 top-1 size-5 text-blue-600 dark:text-blue-500">
+                      <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                    </svg>                    
+                    Precise Ride Tracking.
+                  </dt>
+                  <dd class="inline">Track Every Mile, Every Moment. Effortlessly record your motorcycle routes with RideMate's accurate GPS tracking. Capture distance, duration, and speed, giving you a detailed log of every adventure. Relive your rides and see exactly where you've been.</dd>
+                </div>
+                <div class="relative pl-9">
+                  <dt class="inline font-semibold text-gray-900 dark:text-white">
+                    <svg class="absolute left-1 top-1 size-5 text-blue-600 dark:text-blue-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd" />
+                    </svg>
+                    Your Data, Your Control.
+                  </dt>
+                  <dd class="inline">Privacy-First Riding. Unlike other ride trackers, RideMate keeps your data secure and private on your device. Your routes, your statistics – it all stays with you. Ride with peace of mind knowing your personal information is protected.</dd>
+                </div>
+                <div class="relative pl-9">
+                  <dt class="inline font-semibold text-gray-900 dark:text-white">
+                    <svg class="absolute left-1 top-1 size-5 text-blue-600 dark:text-blue-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.414A2 2 0 0 0 15.414 6L12 2.586A2 2 0 0 0 10.586 2H6Zm1 8a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H7Z" clip-rule="evenodd" />
+                    </svg>
+                    Personal Ride Log.
+                  </dt>
+                  <dd class="inline">Build Your Ride History. Keep a comprehensive log of all your motorcycle journeys. Easily access past rides, review your stats, and remember every unforgettable experience. Your personal ride archive, always at your fingertips.</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+            <div class="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:mt-0 lg:gap-8 items-center">
+            <img src="ridehistory-portrait.png" alt="Ride history screenshot" class="w-full max-w-none rounded-xl" width="1216" height="1442">
+            <img src="datachoice.png" alt="Data privacy choice screenshot" class="w-full max-w-none rounded-xl" width="1216" height="1442">
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
+        <div class="relative isolate overflow-hidden bg-gray-900 dark:bg-blue-900/30 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
+          <h2 class="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Ready to hit the road?</h2>
+          <p class="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-300 dark:text-gray-200">Be among the first to experience RideMate. Sign up for the beta and start tracking your rides with privacy and simplicity.</p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="https://testflight.apple.com/join/hhDZSPuX" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 dark:text-blue-600 shadow-sm hover:bg-gray-100 dark:hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Sign up for the beta</a>
+          </div>
+          <svg viewBox="0 0 1024 1024" class="absolute left-1/2 top-1/2 -z-10 size-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] dark:[mask-image:radial-gradient(closest-side,white,transparent)]" aria-hidden="true">
+            <circle cx="512" cy="512" r="512" fill="url(#827591b1-ce8c-4110-b064-7cb85a0b1217)" fill-opacity="0.7" dark:fill-opacity="0.3" />
+            <defs>
+              <radialGradient id="827591b1-ce8c-4110-b064-7cb85a0b1217">
+                <stop stop-color="#7775D6" />
+                <stop offset="1" stop-color="#E935C1" />
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
