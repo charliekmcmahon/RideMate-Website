@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ darkMode: localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) }" x-init="document.documentElement.classList.toggle('dark', darkMode)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - RideMate</title>
+    <meta name="description" content="Get help with RideMate - FAQs, troubleshooting, and contact information for your motorcycle ride tracking app.">
+    <link rel="icon" href="/icon-light.png" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <header class="absolute inset-x-0 top-0 z-50 bg-white dark:bg-gray-900" x-data="{ mobileMenuOpen: false }">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex flex-1">
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a href="/" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Home</a>
+            <a href="/privacy/" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Privacy</a>
+          </div>
+          <div class="flex lg:hidden">
+            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-400" @click="mobileMenuOpen = true">
+              <span class="sr-only">Open main menu</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <a href="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">RideMate</span>
+          <img class="h-10 w-auto dark:hidden" src="../icon-light.png" alt="RideMate Logo Light">
+          <img class="h-10 w-auto hidden dark:block" src="../icon-dark.png" alt="RideMate Logo Dark">
+        </a>
+        <div class="flex flex-1 justify-end items-center">
+          <a href="https://apps.apple.com/au/app/ridemate-ride-tracking/id6744748216?itscg=30200&itsct=apps_box_link&mttnsubad=6744748216" target="_blank" class="hidden lg:inline-block">
+            <img class="h-10 w-auto dark:hidden" src="../AppStoreBadge-Dark.svg" alt="Download on the App Store">
+            <img class="h-10 w-auto hidden dark:block" src="../AppStoreBadge-Light.svg" alt="Download on the App Store">
+          </a>
+        </div>
+      </nav>
+      <!-- Mobile menu -->
+      <div class="lg:hidden" role="dialog" aria-modal="true" x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false">
+        <div class="fixed inset-0 z-50"></div>
+        <div class="fixed inset-y-0 left-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-x-full" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-full">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex flex-1">
+              <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-400" @click="mobileMenuOpen = false">
+                <span class="sr-only">Close menu</span>
+                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <a href="/" class="-m-1.5 p-1.5">
+              <span class="sr-only">RideMate</span>
+              <img class="h-10 w-auto dark:hidden" src="../icon-light.png" alt="RideMate Logo Light">
+              <img class="h-10 w-auto hidden dark:block" src="../icon-dark.png" alt="RideMate Logo Dark">
+            </a>
+            <div class="flex flex-1 justify-end items-center">
+              <a href="https://apps.apple.com/au/app/ridemate-ride-tracking/id6744748216?itscg=30200&itsct=apps_box_link&mttnsubad=6744748216" target="_blank" class="-m-1.5 p-1.5">
+                <img class="h-8 w-auto dark:hidden" src="../AppStoreBadge-Dark.svg" alt="Download on the App Store">
+                <img class="h-8 w-auto hidden dark:block" src="../AppStoreBadge-Light.svg" alt="Download on the App Store">
+              </a>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <a href="/" class="block text-lg font-semibold text-gray-900 dark:text-white">Home</a>
+            <a href="/privacy/" class="block text-lg font-semibold text-gray-900 dark:text-white">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="relative isolate pt-24 pb-16">
+      <svg class="absolute inset-0 -z-10 size-full stroke-gray-200 dark:stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
+        <defs>
+          <pattern id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+            <path d="M100 200V.5M.5 .5H200" fill="none" />
+          </pattern>
+        </defs>
+        <svg x="50%" y="-1" class="overflow-visible fill-gray-50 dark:fill-gray-900/10">
+          <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+        </svg>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" />
+      </svg>
+      
+      <div class="mx-auto max-w-4xl px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Support</h1>
+          <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">Get help with RideMate and make the most of your ride tracking experience.</p>
+        </div>
+
+        <!-- Quick Contact -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-12">
+          <h2 class="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4">Need Quick Help?</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <i class="fas fa-envelope mx-auto h-8 w-8 text-blue-600 dark:text-blue-400 mb-2 text-2xl"></i>
+              <h3 class="font-semibold text-gray-900 dark:text-white">Email Support</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">Get personalised help</p>
+              <a href="mailto:charlie@sunsetlabs.com.au" class="text-blue-600 dark:text-blue-400 hover:underline">charlie@sunsetlabs.com.au</a>
+            </div>
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <svg class="mx-auto h-8 w-8 text-blue-600 dark:text-blue-400 mb-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+              <h3 class="font-semibold text-gray-900 dark:text-white">Response Time</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">We typically respond within</p>
+              <span class="text-blue-600 dark:text-blue-400 font-semibold">2-3 business days</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Frequently Asked Questions</h2>
+          
+          <div class="space-y-6" x-data="{ openFaq: null }">
+            <!-- FAQ 1 -->
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg">
+              <button class="w-full px-6 py-4 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" @click="openFaq = openFaq === 1 ? null : 1">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">How do I start tracking a ride?</h3>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform" :class="{ 'rotate-180': openFaq === 1 }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </button>
+              <div class="px-6 py-4 bg-white dark:bg-gray-900" x-show="openFaq === 1" x-transition>
+                <p class="text-gray-600 dark:text-gray-300">To start tracking a ride, simply open RideMate and tap the large "Start Ride" button on the main screen. Make sure location services are enabled for the app. The app will begin recording your route, speed, and other ride metrics automatically.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg">
+              <button class="w-full px-6 py-4 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" @click="openFaq = openFaq === 2 ? null : 2">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Is my ride data private and secure?</h3>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform" :class="{ 'rotate-180': openFaq === 2 }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </button>
+              <div class="px-6 py-4 bg-white dark:bg-gray-900" x-show="openFaq === 2" x-transition>
+                <p class="text-gray-600 dark:text-gray-300">Absolutely! RideMate is built with privacy as our top priority. All your ride data is stored locally on your device and is encrypted. We don't upload your routes or location data to our servers. Your rides belong to you and stay with you. Read our <a href="/privacy/" class="text-blue-600 dark:text-blue-400 hover:underline">Privacy Policy</a> for more details.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg">
+              <button class="w-full px-6 py-4 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" @click="openFaq = openFaq === 3 ? null : 3">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Why does the app drain my battery?</h3>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform" :class="{ 'rotate-180': openFaq === 3 }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </button>
+              <div class="px-6 py-4 bg-white dark:bg-gray-900" x-show="openFaq === 3" x-transition>
+                <p class="text-gray-600 dark:text-gray-300">GPS tracking requires continuous location monitoring, which does use battery. We've optimised RideMate to be as efficient as possible. For longer rides, consider using a phone mount with charging capability. You can also adjust GPS accuracy settings in the app to balance battery life with tracking precision.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg">
+              <button class="w-full px-6 py-4 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" @click="openFaq = openFaq === 4 ? null : 4">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">What motorcycle types does RideMate support?</h3>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform" :class="{ 'rotate-180': openFaq === 4 }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </button>
+              <div class="px-6 py-4 bg-white dark:bg-gray-900" x-show="openFaq === 4" x-transition>
+                <p class="text-gray-600 dark:text-gray-300">RideMate works with all types of motorcycles - from sport bikes and cruisers to adventure bikes, touring motorcycles, and even scooters. The app is designed to track any two-wheeled motorised vehicle. You can set your bike type in the settings to get more accurate statistics and insights.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Troubleshooting Section -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Troubleshooting</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">GPS Issues</h3>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li>• Ensure location services are enabled for RideMate</li>
+                <li>• Try restarting the app if GPS seems inaccurate</li>
+                <li>• Check if you have a clear view of the sky</li>
+                <li>• Verify your phone's GPS is working with other apps</li>
+                <li>• Consider calibrating your phone's compass</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">App Performance</h3>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li>• Close other apps to free up memory</li>
+                <li>• Restart your phone if the app is sluggish</li>
+                <li>• Make sure you have the latest version installed</li>
+                <li>• Check available storage space on your device</li>
+                <li>• Try turning off battery optimization for RideMate</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Data & Storage</h3>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li>• Back up rides regularly using the export feature</li>
+                <li>• Delete old rides if storage space is limited</li>
+                <li>• Check if iCloud backup includes app data</li>
+                <li>• Contact support if rides disappear unexpectedly</li>
+                <li>• Keep the app updated for the latest data protection</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Battery Optimization</h3>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li>• Enable power saving mode for longer rides</li>
+                <li>• Reduce screen brightness while riding</li>
+                <li>• Close unnecessary background apps</li>
+                <li>• Use airplane mode in areas with poor signal</li>
+                <li>• Consider a phone mount with charging capability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Still Need Help?</h2>
+          <p class="text-center text-gray-600 dark:text-gray-300 mb-8">Can't find what you're looking for? Send us a message and we'll get back to you as soon as possible.</p>
+          
+          <div class="max-w-lg mx-auto">
+            <form action="mailto:charlie@sunsetlabs.com.au" method="post" enctype="text/plain" class="space-y-6">
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                <select name="subject" id="subject" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option>General Question</option>
+                  <option>Technical Issue</option>
+                  <option>Feature Request</option>
+                  <option>Privacy Concern</option>
+                  <option>Bug Report</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="device" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Device Information (Optional)</label>
+                <input type="text" name="device" id="device" placeholder="e.g., iPhone 15 Pro, iOS 17.1" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                <textarea name="message" id="message" rows="5" placeholder="Describe your issue or question in detail..." class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+              </div>
+              
+              <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition-colors">
+                Send Message
+              </button>
+            </form>
+            
+            <p class="text-xs text-gray-500 dark:text-gray-400 text-center mt-4">
+              This will open your default email client. You can also email us directly at 
+              <a href="mailto:charlie@sunsetlabs.com.au" class="text-blue-600 dark:text-blue-400 hover:underline">charlie@sunsetlabs.com.au</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- App Store Link -->
+        <div class="text-center mt-12">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Don't have RideMate yet?</h3>
+          <a href="https://apps.apple.com/au/app/ridemate-ride-tracking/id6744748216?itscg=30200&itsct=apps_box_link&mttnsubad=6744748216" target="_blank" class="inline-block">
+            <img class="h-14 w-auto dark:hidden" src="../AppStoreBadge-Dark.svg" alt="Download on the App Store">
+            <img class="h-14 w-auto hidden dark:block" src="../AppStoreBadge-Light.svg" alt="Download on the App Store">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+      <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-x-4">
+            <img class="h-8 w-auto dark:hidden" src="../icon-light.png" alt="RideMate Logo Light">
+            <img class="h-8 w-auto hidden dark:block" src="../icon-dark.png" alt="RideMate Logo Dark">
+            <span class="text-sm text-gray-600 dark:text-gray-400">© 2025 RideMate. All rights reserved.</span>
+          </div>
+          <div class="flex gap-x-6">
+            <a href="/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Home</a>
+            <a href="/privacy/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

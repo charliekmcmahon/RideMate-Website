@@ -14,7 +14,7 @@
       <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex flex-1">
           <div class="hidden lg:flex lg:gap-x-12">
-            <!-- Links removed as requested -->
+            <!-- Navigation links moved to footer -->
           </div>
           <div class="flex lg:hidden">
             <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-400" @click="mobileMenuOpen = true">
@@ -91,6 +91,7 @@
             </a>
             <a href="#features" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Learn more <span aria-hidden="true">→</span></a>
           </div>
+          <p class="mt-6 text-xs text-gray-500 dark:text-gray-400">*STRAVA is a trademark of Strava Inc. RideMate is not affiliated with Strava.</p>
         </div>
         <div class="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow">
           <img class="mx-auto w-[32.32rem] max-w-full drop-shadow-xl dark:opacity-80" src="ride.png" alt="RideMate app screenshot on a phone showing a map" />
@@ -168,5 +169,21 @@
         </div>
       </div>
     </div>
+
+    <footer class="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+      <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-x-4">
+            <img class="h-8 w-auto dark:hidden" src="icon-light.png" alt="RideMate Logo Light">
+            <img class="h-8 w-auto hidden dark:block" src="icon-dark.png" alt="RideMate Logo Dark">
+            <span class="text-sm text-gray-600 dark:text-gray-400">© 2025 Sunset Labs. All rights reserved.</span>
+          </div>
+          <div class="flex gap-x-6">
+            <a href="/privacy/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Privacy</a>
+            <a href="/support/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Support</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>
