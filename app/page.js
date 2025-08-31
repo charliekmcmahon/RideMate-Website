@@ -74,8 +74,8 @@ export default function HomePage() {
           loop
           playsInline
         >
-          <source src="/RideMateRide2.mov" type="video/mp4" />
-          <source src="/RideMateRide2.mov" type="video/quicktime" />
+          <source src="https://r2.getridemate.app/RideMateRide2.mov" type="video/mp4" />
+          <source src="https://r2.getridemate.app/RideMateRide2.mov" type="video/quicktime" />
         </video>
 
         {/* Video Overlay for darkening */}
