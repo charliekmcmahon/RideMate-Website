@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { 
+  color-scheme: light dark;
+}
+
+html, body { 
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Apple-style font smoothing */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Clean scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Subtle utilities */
+.container-px { 
+  @apply px-6 lg:px-8; 
+}
+
+/* Clean shadows */
+.shadow-apple {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-apple-lg {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+.dark .shadow-apple {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .shadow-apple-lg {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Selection colors */
+::selection {
+  background: #007AFF;
+  color: white;
+}
+
+::-moz-selection {
+  background: #007AFF;
+  color: white;
+}
