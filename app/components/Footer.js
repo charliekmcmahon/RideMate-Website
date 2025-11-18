@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <div className="flex items-center gap-x-4">
             <img className="h-8 w-auto" src="/RideMate-iOS-Default-1024x1024@1x.png" alt="RideMate Logo" />
-            <span className="text-sm text-gray-600 dark:text-gray-400">© 2025 Sunset Labs. All rights reserved.</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">© 2025, Charlie McMahon. All rights reserved. Made with ❤️ from the Sunshine Coast 🇦🇺.</span>
           </div>
           <div className="flex gap-x-6">
             <Link href="/privacy" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Privacy</Link>

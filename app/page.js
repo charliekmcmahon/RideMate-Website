@@ -126,7 +126,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              Like Strava, but for <br/> your motorbike or car
+              Like Strava, but for <br/> your motorbike
             </motion.h1>
           </motion.div>
 
@@ -136,7 +136,7 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            The privacy-conscious motorbike & car tracker. Document your journeys, capture every detail, and own your history.
+            The privacy-conscious motorbike (&car!) trip tracker. Document every journey, securely and privately.
           </motion.p>
 
           <motion.div 

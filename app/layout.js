@@ -8,7 +8,7 @@ export const metadata = {
   title: 'RideMate - Motorcycle Ride Tracker',
   description: 'Like Strava, but for your motorbike. Privacy-first ride tracking for motorcycle enthusiasts who value simplicity and control.',
   keywords: 'motorcycle, ride tracker, GPS, privacy, iOS, app, Strava alternative, ride logging, motorcycle app',
-  authors: [{ name: 'Sunset Labs' }],
+  authors: [{ name: 'Charlie McMahon' }],
   creator: 'Charlie McMahon',
   publisher: 'Sunset Labs',
   metadataBase: new URL('https://ridemate.app'),
