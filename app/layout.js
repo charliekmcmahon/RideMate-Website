@@ -51,11 +51,9 @@ export const metadata = {
   icons: {
     icon: [
       { url: '/RideMate-iOS-Default-1024x1024@1x.png' },
-      { url: '/RideMate-iOS-Dark-1024x1024@1x.png', media: '(prefers-color-scheme: dark)' },
     ],
     apple: [
       { url: '/RideMate-iOS-Default-1024x1024@1x.png' },
-      { url: '/RideMate-iOS-Dark-1024x1024@1x.png', media: '(prefers-color-scheme: dark)' },
     ],
   },
 };
